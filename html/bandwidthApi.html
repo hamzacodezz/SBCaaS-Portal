@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SBCaaS</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+  <!-- google fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <!-- CSS file -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/cf729a4aed.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="images/thumbnail.ico">
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function loadHTML() {
+      fetch('/html/navBarTemplate.html')
+        .then(response => response.text())
+        .then(text => document.getElementById('loadedNavbar').innerHTML = text);
+    }
+  </script>
+</head>
+
+<body onload="loadHTML()">
+  <section id="loadedNavbar">
+    <!-- Nav bar will be inserted here -->
+  </section>
+
+  <!-- Start of SBC Status page -->
+
+  <section>
+    <div>
+      <h1 class="signInh1 mb-3 fw-normal">Bandwidth API Page</h1>
+    </div>
+  </section>
+  <!-- <br> -->
+  <section id="top-row">
+    <div class="container-fluid TrunkText">
+      <div class="row">
+        <div class="col-4">
+          <form action="/bandWidthApi" method="post">
+            <button type="submit" class="btn btn-lg btn-dark trunkbutton" role="button" name="uri"
+              value="/v1/inventory/country">Get Countries</button>
+          </form>
+        </div>
+        <div class="col-4">
+          <form action="/bandWidthApi" method="post">
+            <button type="submit" class="btn btn-lg btn-dark trunkbutton" role="button" name="uri"
+              value="/v1/inventory/country/USA/state">US State Coverage</button>
+          </form>
+        </div>
+        <div class="col-4">
+          <form action="/bandWidthApi" method="post">
+            <button type="submit" class="btn btn-lg btn-dark trunkbutton" role="button" name="uri"
+              value="/v1/inventory/country/CAN/state">Canada State Coverage</button>
+          </form>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <form action="/bandWidthApi" method="post">
+        <div class="row rowOne">
+          <div class="col-3 align-self-start centreTopBottom">
+            <label class="col-5">Number Inventory:</label>
+            <select class="col-6 align-self-center selectElement" name="countryCodeA3">
+              <option type="submit" name="countryCodeA3" value="ALL">Select Country</option>
+              <option type="submit" name="countryCodeA3" value="ALL">All</option>
+              <option type="submit" name="countryCodeA3" value="AUS">Australia</option>
+              <option type="submit" name="countryCodeA3" value="CAN">Canada</option>
+              <option type="submit" name="countryCodeA3" value="CZE">Czech Republic</option>
+              <option type="submit" name="countryCodeA3" value="FIN">Finland</option>
+              <option type="submit" name="countryCodeA3" value="GRC">Greece</option>
+              <option type="submit" name="countryCodeA3" value="JPN">Japan</option>
+              <option type="submit" name="countryCodeA3" value="LUX">Luxemburg</option>
+              <option type="submit" name="countryCodeA3" value="POL">Poland</option>
+              <option type="submit" name="countryCodeA3" value="SGP">Singapore</option>
+              <option type="submit" name="countryCodeA3" value="SVK">Slovakia</option>
+              <option type="submit" name="countryCodeA3" value="ZAF">South Africa</option>
+              <option type="submit" name="countryCodeA3" value="GBR">United Kingdom</option>
+              <option type="submit" name="countryCodeA3" value="USA">United States</option>
+            </select>
+          </div>
+          <div class="col-2 align-self-start centreTopBottom">
+            <select class="col-9 align-self-center selectElement" name="deliveryId">
+              <option type="submit" name="deliveryId" value="ALL">Select POP</option>
+              <option type="submit" name="deliveryId" value="ALL">All</option>
+              <option type="submit" name="deliveryId" value="84">Australia: AU</option>
+              <option type="submit" name="deliveryId" value="2">Belgium: BE</option>
+              <option type="submit" name="deliveryId" value="3">Hong Kong: CN</option>
+              <option type="submit" name="deliveryId" value="12">Germany: DE</option>
+              <option type="submit" name="deliveryId" value="14">Los Angeles: US-LA</option>
+              <option type="submit" name="deliveryId" value="6">New York: US-NY</option>
+            </select>
+          </div>
+          <!-- <div class="col-1">
+
+          </div> -->
+          <div class="col-1 align-self-start">
+            <span class="hovertext"
+              data-hover="You can enter a string to use for a partial match (omit the + for E.164). i.e. 4420707514">
+              <input style="width: 105%;" type="text" class="form-control inputAPI smallBox" name="description" value=""
+                placeholder="number">
+            </span>
+          </div>
+
+
+          <div class="col-1 align-self-start">
+            <span class="hovertext"
+              data-hover="You can enter a order reference to find numbers associated with that order">
+              <input style="width: 105%;" type="text" class="form-control inputAPI smallBox" name="orderRef" value=""
+                placeholder="order no.">
+            </span>
+          </div>
+          <div class="col-2">
+
+          </div>
+          <div class="col-2 align-self-start">
+            <button class="btn btn-sm btn-danger" type="submit" name="uri" value="/v1/inventory/did">Get
+              Numbers</button>
+          </div>
+        </div>
+      </form>
+
+      <form action="/bandWidthApi" method="post">
+        <div class="row">
+          <div class="col-3 align-self-start">
+            <label style="margin-top: 21px;">Capacity Groups:</label>
+          </div>
+          <div class="col-2 align-self-start">
+            <span class="hovertext"
+              data-hover="To search for a specific group, enter a full Capacity Group ID, or leave blank to search all IDs">
+              <input type="text" class="form-control inputAPI pxBox" name="groupId" value=""
+                placeholder="Capacity Group ID">
+            </span>
+          </div>
+          <div class="col-4 align-self-start">
+            <span class="hovertext"
+              data-hover="You can enter a partial decription, i.e. Wella, to find all the Voice URIs that contain Wella in the description">
+              <input type="text" class="form-control inputAPI descBox" name="groupDescription" value=""
+                placeholder="description to match">
+            </span>
+          </div>
+          <div class="col-2 align-self-start">
+            <button class="btn btn-sm btn-danger" type="submit" name="uri" value="/v1/configuration/capacitygroup">Get
+              Groups</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 align-self-start">
+            <label style="margin-top: 21px;" class="col-5">Voice URIs:</label>
+          </div>
+          <div class="col-2 align-self-start">
+            <span class="hovertext"
+              data-hover="To search for a specific group, enter a full Voice URI ID, or leave blank to search all IDs">
+              <input type="text" class="form-control inputAPI pxBox" name="voiceUriId" value=""
+                placeholder="Voice URI ID">
+            </span>
+          </div>
+          <div class="col-4 align-self-start">
+            <span class="hovertext"
+              data-hover="You can enter a partial decription, i.e. London, to find all the URIs that contain London in the description">
+              <input type="text" class="form-control inputAPI descBox" name="description" value=""
+                placeholder="description to match">
+            </span>
+          </div>
+          <div class="col-2 align-self-start">
+            <button class="btn btn-sm btn-danger" type="submit" name="uri" value="/v1/configuration/voiceuri">Get Voice
+              URIs</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+  </section>
+</body>
