@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>SBCaaS</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <!-- google fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet" />
+  <!-- CSS file -->
+  <link rel="stylesheet" href="/styles.css" />
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/cf729a4aed.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="images/thumbnail.ico" />
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function loadHTML() {
+      fetch('/html/navBarTemplate.html')
+        .then(response => response.text())
+        .then(text => (document.getElementById('loadedNavbar').innerHTML = text));
+    }
+  </script>
+</head>
+
+<body onload="loadHTML()">
+  <section id="loadedNavbar">
+    <!-- Nav bar will be inserted here -->
+  </section>
+
+  <!-- Start of Form/Login page -->
+
+  <!-- <section id="Banner">
+    <div class="middle-container">
+      <h1>Meet the SBCaaS Team</h1>
+    </div>
+  </section> -->
+
+  <section>
+    <div>
+      <h1 class="signInh1 mb-3 fw-normal">Meet the Team</h1>
+    </div>
+  </section>
+
+
+  <section id="teamCarousel">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h4>Blue Egg</h4>
+          <img class="d-inline charImage" src="/images/egg-blue.jpg" alt="First slide">
+          <br>
+          <div class="row">
+            <div class="col-lg-4 center-quote">
+              <em class="team-name">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Dui nunc mattis enim ut tellus. Elementum curabitur vitae
+                nunc sed velit dignissim sodales ut. Feugiat nisl pretium fusce id velit ut tortor pretium
+                viverra.</em>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <h4>Orange Egg</h4>
+          <img class="d-inline charImage" src="/images/egg-orange.webp" alt="Second slide">
+          <br>
+          <div class="row">
+            <div class="col-lg-4 center-quote">
+              <em class="team-name">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Dui nunc mattis enim ut tellus. Elementum curabitur vitae
+                nunc sed velit dignissim sodales ut. Feugiat nisl pretium fusce id velit ut tortor pretium
+                viverra.</em>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <h4>Turquoise Egg</h4>
+          <img class="d-inline charImage" src="/images/egg-turquoise.jpg" alt="Third slide">
+          <br>
+          <div class="row">
+            <div class="col-lg-4 center-quote">
+              <em class="team-name">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Dui nunc mattis enim ut tellus. Elementum curabitur vitae
+                nunc sed velit dignissim sodales ut. Feugiat nisl pretium fusce id velit ut tortor pretium
+                viverra.</em>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <h4>Green Egg</h4>
+          <img class="d-inline charImage" src="/images/egg-green.png" alt="Fourth slide">
+          <br>
+          <div class="row">
+            <div class="col-lg-4 center-quote">
+              <em class="team-name">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Dui nunc mattis enim ut tellus. Elementum curabitur vitae
+                nunc sed velit dignissim sodales ut. Feugiat nisl pretium fusce id velit ut tortor pretium
+                viverra.</em>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev carousel-color" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next carousel-color" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        <!-- <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+            class="active carousel-buttons" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            class="carousel-buttons" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            class="carousel-buttons" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            class="carousel-buttons" aria-label="Slide 4"></button>
+        </div> -->
+      </div>
+    </div>
+
+  </section>
